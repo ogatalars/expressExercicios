@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>CRUD de Usuários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="column">
+      <a class="go-back" href="/users/">Voltar</a>
+      <div class="label">Nome</div>
+      <input type="text" readonly value="<%= user.name %>">
+      <div style="height: 18px"></div>
+      <div class="label">Email</div>
+      <input type="text" readonly value="<%= user.email %>">
+      <div style="height: 24px"></div>
+      <a class="button bg-secondary" href="/users/edit/<%=user.id%>">Editar</a>
+      <div style="height: 12px"></div>
+      <button class="button bg-danger">Deletar</button>
+    </div>
+  </body>
+</html>

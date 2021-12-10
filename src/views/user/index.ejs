@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>CRUD de Usuários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <div class="column">
+      <a class="button bg-success" href="/users/create">Novo</a>
+      <div style="height: 24px"></div>
+      <% if (users) { %>
+        <% users.map(user => { %>
+          <div class="card">
+            <div class="column">
+              <div class="label">Nome</div>
+              <div class="data"><%= user && user.name %></div>
+              <div style="height: 18px"></div>
+              <div class="label">Email</div>
+              <div class="data"><%= user && user.email %></div>
+              <div style="height: 18px"></div>
+              <div class="row">
+                <a class="button" href="/users/show/<%= user && user.id %>">Abrir</a>
+                <div style="width: 12px"></div>
+                <a class="button bg-secondary" href="/users/edit/<%= user && user.id %>">Editar</a>
+                <div style="width: 12px"></div>
+                <button class="button bg-danger">Deletar</button>
+              </div>
+            </div>
+          </div>
+          <div style="height: 12px"></div>
+        <% }); %>
+      <% } else { %>
+        <h4 style="margin-left: auto; margin-right: auto;"> Nenhum usuário cadastrado </h4>
+      <% } %>
+    </div>
+  </body>
+</html>
